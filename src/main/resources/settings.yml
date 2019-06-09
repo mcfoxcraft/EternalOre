@@ -1,0 +1,41 @@
+# -------------------------------------------------------------
+# |                                                           |
+# |                        ETERNAL ORE                        |
+# |                                                           |
+# |     This file is used to configure the different types    |
+# |     ores that can regenerate in EternalOre. Please do     |
+# |     Not remove anything as doing so will cause errors.    |
+# |                                                           |
+# -------------------------------------------------------------
+
+# The material of the wand item for this plugin.
+wand-material: BLAZE_ROD
+
+# The block that will take the place of the mined ore until it respawns.
+placeholder-block: BEDROCK
+
+# The settings for the mineable ores.
+ores:
+  coal-ore:
+    drop: COAL # What the block will drop when mined.
+    max-drop-count: 1 # The maximum amount of a drop that can be given per ore mined.
+    respawn-time: 1 # The time (in minutes) for an ore to respawn after being mined.
+  iron-ore:
+    drop: IRON_INGOT
+    max-drop-count: 1
+    respawn-time: 2
+  gold-ore:
+    drop: GOLD_INGOT
+    max-drop-count: 1
+    respawn-time: 5
+  diamond-ore:
+    drop: DIAMOND
+    max-drop-count: 1
+    respawn-time: 7
+  emerald-ore:
+    drop: EMERALD
+    max-drop-count: 1
+    respawn-time: 10
+  random-ore:
+    max-drop-count: 10
+    respawn-time: 15

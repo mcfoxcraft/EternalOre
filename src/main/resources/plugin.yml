@@ -1,0 +1,30 @@
+name: ${project.artifactId}
+main: ${mainClass}
+version: ${project.version}
+author: ${author}
+
+permissions:
+  eternalore.*:
+    description: Grants player all permissions for this plugin. Be careful with who you give this to.
+    default: false
+    children:
+      eternalore.help: true
+      eternalore.reload: true
+      eternalore.respawn: true
+      eternalore.wand.give: true
+      eternalore.wand.use: true
+  eternalore.help:
+    description: Allows the player to view the help for this plugin.
+    default: false
+  eternalore.reload:
+    description: Allows the player to reload the settings.yml
+    default: false
+  eternalore.respawn:
+    description: Allows the player to respawn mined ores.
+    default: false
+  eternalore.wand.give:
+    description: Allows the player to give themself the Eternal Ore Wand.
+    default: false
+  eternalore.wand.use:
+    description: Allows the player to use the Eternal Ore Wand.
+    default: false
