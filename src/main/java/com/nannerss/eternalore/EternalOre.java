@@ -10,6 +10,7 @@ import com.nannerss.bananalib.config.ConfigManager;
 import com.nannerss.bananalib.messages.Console;
 import com.nannerss.bananalib.utils.Registrar;
 import com.nannerss.eternalore.commands.EternalOreCommand;
+import com.nannerss.eternalore.listeners.JoinListener;
 import com.nannerss.eternalore.utils.Metrics;
 import com.nannerss.eternalore.data.Ores;
 import com.nannerss.eternalore.data.Settings;
@@ -47,6 +48,7 @@ public class EternalOre extends JavaPlugin {
         Registrar.registerCommand(new EternalOreCommand());
         getServer().getPluginManager().registerEvents(new WandListener(), this);
         getServer().getPluginManager().registerEvents(new OreMineListener(), this);
+        getServer().getPluginManager().registerEvents(new JoinListener(), this);
     
         ConfigurationSection section = ores.getConfigurationSection("ores");
         if (section == null) {
