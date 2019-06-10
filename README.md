@@ -15,6 +15,7 @@ Create ores that automatically respawn!
 - eternalore.respawn - Allows the player to respawn mined ores.
 - eternalore.wand.give - Allows the player to give themself the Eternal Ore Wand.
 - eternalore.wand.use - Allows the player to use the Eternal Ore Wand.
+- eternalore.update - Allows the player to recieve a plugin update message on join.
 
 ## How do I set it up?
 1) Download the plugin jar from the SpigotMC website.

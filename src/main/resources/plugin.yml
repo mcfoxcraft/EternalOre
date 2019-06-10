@@ -13,6 +13,7 @@ permissions:
       eternalore.respawn: true
       eternalore.wand.give: true
       eternalore.wand.use: true
+      eternalore.update: true
   eternalore.help:
     description: Allows the player to view the help for this plugin.
     default: false
@@ -27,4 +28,7 @@ permissions:
     default: false
   eternalore.wand.use:
     description: Allows the player to use the Eternal Ore Wand.
+    default: false
+  eternalore.update:
+    description: Allows the player to recieve a plugin update message on join.
     default: false
