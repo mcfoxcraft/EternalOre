@@ -1,6 +1,8 @@
 # EternalOre
 Create ores that automatically respawn!
 
+Download: https://www.spigotmc.org/resources/eternal-ore-respawnable-ores.68180/
+
 ## Commands
 - /eternalore - The base command for the plugin.
 - /eternalore help - Lists the available commands for the plugin.
