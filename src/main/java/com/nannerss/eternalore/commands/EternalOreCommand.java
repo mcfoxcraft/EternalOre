@@ -70,6 +70,8 @@ public class EternalOreCommand extends Command {
             EternalOre.getSettings().loadConfig();
             Settings.load();
             
+            WandItem.getItem().setType(Settings.WAND_MATERIAL);
+            
             Messages.sendMessage(p, "&dSuccessfully reloaded the config!");
         } else if ("respawn".equalsIgnoreCase(parameter)) {
             if (!p.hasPermission("eternalore.respawn")) {
@@ -81,8 +83,6 @@ public class EternalOreCommand extends Command {
                 Block block = p.getTargetBlock(null, 5);
                 
                 for (Ores cache : EternalOre.getOresCache().asMap().values()) {
-                    System.out.println(block.getLocation().toString());
-                    System.out.println(cache.getLocation().toString());
                     if (block.getLocation().getWorld() == cache.getLocation().getWorld() && block.getLocation().getBlockX() == cache.getLocation().getBlockX() && block.getLocation().getBlockY() == cache.getLocation().getBlockY() && block.getLocation().getBlockZ() == cache.getLocation().getBlockZ()) {
                         if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK || !Settings.ORES.contains(cache.getLocation().getBlock().getType())) {
                             switch (cache.getType()) {
