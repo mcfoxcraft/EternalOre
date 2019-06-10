@@ -7,6 +7,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.nannerss.bananalib.BananaLib;
 import com.nannerss.bananalib.config.ConfigManager;
+import com.nannerss.bananalib.messages.Console;
 import com.nannerss.bananalib.utils.Registrar;
 import com.nannerss.eternalore.commands.EternalOreCommand;
 import com.nannerss.eternalore.utils.Metrics;
@@ -15,8 +16,10 @@ import com.nannerss.eternalore.data.Settings;
 import com.nannerss.eternalore.listeners.OreMineListener;
 import com.nannerss.eternalore.listeners.WandListener;
 import com.nannerss.eternalore.tasks.OreRegenTask;
+import com.nannerss.eternalore.utils.Updater;
 
 import lombok.Getter;
+import net.md_5.bungee.api.chat.TextComponent;
 
 public class EternalOre extends JavaPlugin {
     
@@ -56,6 +59,15 @@ public class EternalOre extends JavaPlugin {
         }
         
         new OreRegenTask().runTaskTimer(this, 200, 20);
+    
+        new Updater(68180) {
+        
+            @Override
+            public void onUpdateAvailable() {
+                Console.log(TextComponent.toPlainText(getUpdateMessage()));
+            }
+        
+        }.runTaskAsynchronously(this);
     
         Metrics metrics = new Metrics(this);
     }
