@@ -9,6 +9,7 @@ import java.net.URLConnection;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import com.nannerss.bananalib.messages.Component;
+import com.nannerss.bananalib.utils.Utils;
 import com.nannerss.eternalore.EternalOre;
 
 import net.md_5.bungee.api.chat.BaseComponent;
@@ -27,7 +28,7 @@ public abstract class Updater extends BukkitRunnable {
         return !latest.equals(EternalOre.getInstance().getDescription().getVersion());
     }
     
-    public static BaseComponent[] getUpdateMessage() {
+    public static BaseComponent[] getPlayerUpdateMessage() {
         final EternalOre instance = EternalOre.getInstance();
         
         return Component.builder("")
@@ -38,9 +39,26 @@ public abstract class Updater extends BukkitRunnable {
                 .append("&dA new version of " + instance.getDescription().getName() + " is available!\n")
                 .append("&dYou are on &fv" + instance.getDescription().getVersion() + "&d, update to &fv" + getLatest() + " &dhere:\n")
                 .append("\n")
-                .append("                &5&l[DOWNLOAD]\n").onHover("&6&lClick &r&fto open download page!").onClick(Action.OPEN_URL, "https://spigotmc.org/resources/" + getProjectId())
+                .append("               &5&l[DOWNLOAD]\n").onHover("&6&lClick &r&fto open download page!").onClick(Action.OPEN_URL, "https://spigotmc.org/resources/" + getProjectId())
                 .append("\n")
                 .append("").create();
+    }
+    
+    public static String[] getConsoleUpdateMessage() {
+        final EternalOre instance = EternalOre.getInstance();
+        
+        return new String[] {
+                "",
+                "",
+                "               &5" + instance.getDescription().getName(),
+                "",
+                " &dA new version of " + instance.getDescription().getName() + " is available!",
+                " &dYou are on &fv" + instance.getDescription().getVersion() + "&d, update to &fv" + getLatest() + " &dhere:",
+                "",
+                "   https://spigotmc.org/resources/" + getProjectId(),
+                "",
+                ""
+        };
     }
     
     public static int getProjectId() {

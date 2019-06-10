@@ -66,7 +66,7 @@ public class EternalOre extends JavaPlugin {
         
             @Override
             public void onUpdateAvailable() {
-                Console.log(TextComponent.toPlainText(getUpdateMessage()));
+                Console.log(getConsoleUpdateMessage());
             }
         
         }.runTaskAsynchronously(this);

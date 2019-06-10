@@ -28,7 +28,7 @@ public class JoinListener implements Listener {
                         p.playSound(p.getLocation(), Sound.valueOf("ENTITY_CHICKEN_EGG"), 1F, 1F);
                     }
     
-                    p.spigot().sendMessage(Updater.getUpdateMessage());
+                    p.spigot().sendMessage(Updater.getPlayerUpdateMessage());
                 }
             }
         
