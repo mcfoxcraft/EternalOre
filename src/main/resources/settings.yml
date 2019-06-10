@@ -16,16 +16,36 @@ placeholder-block: BEDROCK
 
 # The settings for the mineable ores.
 ores:
+  stone:
+    drop: STONE
+    max-drop-count: 1
+    respawn-time: 1
+  cobblestone:
+    drop: COBBLESTONE
+    max-drop-count: 1
+    respawn-time: 1
+  quartz-ore:
+    drop: QUARTZ
+    max-drop-count: 1
+    respawn-time: 1
   coal-ore:
-    drop: COAL # What the block will drop when mined.
-    max-drop-count: 1 # The maximum amount of a drop that can be given per ore mined.
-    respawn-time: 1 # The time (in minutes) for an ore to respawn after being mined.
+    drop: COAL
+    max-drop-count: 1
+    respawn-time: 1
   iron-ore:
     drop: IRON_INGOT
     max-drop-count: 1
     respawn-time: 2
   gold-ore:
     drop: GOLD_INGOT
+    max-drop-count: 1
+    respawn-time: 5
+  lapis-ore:
+    drop: LAPIS_LAZULI
+    max-drop-count: 1
+    respawn-time: 5
+  redstone-ore:
+    drop: REDSTONE
     max-drop-count: 1
     respawn-time: 5
   diamond-ore:
@@ -37,5 +57,11 @@ ores:
     max-drop-count: 1
     respawn-time: 10
   random-ore:
+    ores:
+      - COAL_ORE
+      - IRON_ORE
+      - GOLD_ORE
+      - DIAMOND_ORE
+      - EMERALD_ORE
     max-drop-count: 10
     respawn-time: 15

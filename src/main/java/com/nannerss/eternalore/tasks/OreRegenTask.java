@@ -23,6 +23,15 @@ public class OreRegenTask extends BukkitRunnable {
             if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK) {
                 if (cache.getRespawnTime() <= System.currentTimeMillis()) {
                     switch (cache.getType()) {
+                        case "STONE":
+                            cache.getLocation().getBlock().setType(Material.STONE);
+                            break;
+                        case "COBBLESTONE":
+                            cache.getLocation().getBlock().setType(Material.COBBLESTONE);
+                            break;
+                        case "QUARTZ_ORE":
+                            cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                            break;
                         case "COAL_ORE":
                             cache.getLocation().getBlock().setType(Material.COAL_ORE);
                             break;
@@ -32,6 +41,12 @@ public class OreRegenTask extends BukkitRunnable {
                         case "GOLD_ORE":
                             cache.getLocation().getBlock().setType(Material.GOLD_ORE);
                             break;
+                        case "LAPIS_ORE":
+                            cache.getLocation().getBlock().setType(Material.LAPIS_ORE);
+                            break;
+                        case "REDSTONE_ORE":
+                            cache.getLocation().getBlock().setType(Material.REDSTONE_ORE);
+                            break;
                         case "DIAMOND_ORE":
                             cache.getLocation().getBlock().setType(Material.DIAMOND_ORE);
                             break;
@@ -39,7 +54,7 @@ public class OreRegenTask extends BukkitRunnable {
                             cache.getLocation().getBlock().setType(Material.EMERALD_ORE);
                             break;
                         case "RANDOM_ORE":
-                            Material ore = Settings.ORES.get(r.nextInt(5));
+                            Material ore = Settings.RANDOM_ORES.get(r.nextInt(Settings.RANDOM_ORES.size()));
             
                             cache.getLocation().getBlock().setType(ore);
                             break;
@@ -59,7 +74,7 @@ public class OreRegenTask extends BukkitRunnable {
                 }
             } else if (Settings.ORES.contains(cache.getLocation().getBlock().getType()) || cache.getLocation().getBlock().getType() == Material.REDSTONE_BLOCK) {
                 if (cache.getType().equals("RANDOM_ORE")) {
-                    Material ore = Settings.ORES.get(r.nextInt(5));
+                    Material ore = Settings.RANDOM_ORES.get(r.nextInt(Settings.RANDOM_ORES.size()));
     
                     cache.getLocation().getBlock().setType(ore);
                     

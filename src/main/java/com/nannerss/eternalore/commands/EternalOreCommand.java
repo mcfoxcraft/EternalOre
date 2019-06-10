@@ -2,6 +2,7 @@ package com.nannerss.eternalore.commands;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -86,6 +87,15 @@ public class EternalOreCommand extends Command {
                     if (block.getLocation().getWorld() == cache.getLocation().getWorld() && block.getLocation().getBlockX() == cache.getLocation().getBlockX() && block.getLocation().getBlockY() == cache.getLocation().getBlockY() && block.getLocation().getBlockZ() == cache.getLocation().getBlockZ()) {
                         if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK || !Settings.ORES.contains(cache.getLocation().getBlock().getType())) {
                             switch (cache.getType()) {
+                                case "STONE":
+                                    cache.getLocation().getBlock().setType(Material.STONE);
+                                    break;
+                                case "COBBLESTONE":
+                                    cache.getLocation().getBlock().setType(Material.COBBLESTONE);
+                                    break;
+                                case "QUARTZ_ORE":
+                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                                    break;
                                 case "COAL_ORE":
                                     cache.getLocation().getBlock().setType(Material.COAL_ORE);
                                     break;
@@ -94,6 +104,12 @@ public class EternalOreCommand extends Command {
                                     break;
                                 case "GOLD_ORE":
                                     cache.getLocation().getBlock().setType(Material.GOLD_ORE);
+                                    break;
+                                case "LAPIS_ORE":
+                                    cache.getLocation().getBlock().setType(Material.LAPIS_ORE);
+                                    break;
+                                case "REDSTONE_ORE":
+                                    cache.getLocation().getBlock().setType(Material.REDSTONE_ORE);
                                     break;
                                 case "DIAMOND_ORE":
                                     cache.getLocation().getBlock().setType(Material.DIAMOND_ORE);
@@ -137,6 +153,15 @@ public class EternalOreCommand extends Command {
                     for (Ores cache : EternalOre.getOresCache().asMap().values()) {
                         if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK || !Settings.ORES.contains(cache.getLocation().getBlock().getType())) {
                             switch (cache.getType()) {
+                                case "STONE":
+                                    cache.getLocation().getBlock().setType(Material.STONE);
+                                    break;
+                                case "COBBLESTONE":
+                                    cache.getLocation().getBlock().setType(Material.COBBLESTONE);
+                                    break;
+                                case "QUARTZ_ORE":
+                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                                    break;
                                 case "COAL_ORE":
                                     cache.getLocation().getBlock().setType(Material.COAL_ORE);
                                     break;
@@ -145,6 +170,12 @@ public class EternalOreCommand extends Command {
                                     break;
                                 case "GOLD_ORE":
                                     cache.getLocation().getBlock().setType(Material.GOLD_ORE);
+                                    break;
+                                case "LAPIS_ORE":
+                                    cache.getLocation().getBlock().setType(Material.LAPIS_ORE);
+                                    break;
+                                case "REDSTONE_ORE":
+                                    cache.getLocation().getBlock().setType(Material.REDSTONE_ORE);
                                     break;
                                 case "DIAMOND_ORE":
                                     cache.getLocation().getBlock().setType(Material.DIAMOND_ORE);

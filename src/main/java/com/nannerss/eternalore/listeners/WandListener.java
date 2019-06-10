@@ -1,6 +1,7 @@
 package com.nannerss.eternalore.listeners;
 
 import org.apache.commons.lang.WordUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -62,7 +63,12 @@ public class WandListener implements Listener {
                     if (Settings.ORES.contains(e.getClickedBlock().getType())) {
                         Ores cache = EternalOre.getCache(id);
                         
-                        cache.setType(e.getClickedBlock().getType().toString());
+                        if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"))) {
+                            cache.setType("QUARTZ_ORE");
+                        } else {
+                            cache.setType(e.getClickedBlock().getType().toString());
+                        }
+                        
                         cache.setLocation(loc);
                         cache.setRespawnTime(0);
                         cache.save();

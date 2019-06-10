@@ -20,7 +20,6 @@ import com.nannerss.eternalore.tasks.OreRegenTask;
 import com.nannerss.eternalore.utils.Updater;
 
 import lombok.Getter;
-import net.md_5.bungee.api.chat.TextComponent;
 
 public class EternalOre extends JavaPlugin {
     
