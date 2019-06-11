@@ -3,6 +3,8 @@ main: ${mainClass}
 version: ${project.version}
 author: ${author}
 
+api-version: 1.13
+
 permissions:
   eternalore.*:
     description: Grants player all permissions for this plugin. Be careful with who you give this to.

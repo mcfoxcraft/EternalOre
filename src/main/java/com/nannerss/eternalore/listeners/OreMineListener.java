@@ -3,7 +3,6 @@ package com.nannerss.eternalore.listeners;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
-import org.bukkit.DyeColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -13,7 +12,6 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.MaterialData;
 
 import com.nannerss.bananalib.config.ConfigManager;
 import com.nannerss.bananalib.messages.Messages;
