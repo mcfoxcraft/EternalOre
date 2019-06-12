@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import com.nannerss.bananalib.config.ConfigManager;
 import com.nannerss.bananalib.messages.Messages;
 import com.nannerss.eternalore.EternalOre;
-import com.nannerss.eternalore.data.Ores;
+import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
 import com.nannerss.eternalore.items.WandItem;
 
@@ -46,7 +46,7 @@ public class WandListener implements Listener {
             if (a == Action.LEFT_CLICK_BLOCK) {
                 if (p.isSneaking()) {
                     if (e.getClickedBlock().getType() == Material.REDSTONE_BLOCK || Settings.ORES.contains(e.getClickedBlock().getType())) {
-                        Ores cache = EternalOre.getCache(id);
+                        Ore cache = EternalOre.getCache(id);
     
                         cache.setType("RANDOM_ORE");
                         cache.setLocation(loc);
@@ -61,7 +61,7 @@ public class WandListener implements Listener {
                     Messages.sendMessage(p, "&cThe block you clicked is not a valid ore type!");
                 } else {
                     if (Settings.ORES.contains(e.getClickedBlock().getType())) {
-                        Ores cache = EternalOre.getCache(id);
+                        Ore cache = EternalOre.getCache(id);
                         
                         if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"))) {
                             cache.setType("QUARTZ_ORE");
@@ -82,7 +82,7 @@ public class WandListener implements Listener {
                 }
             } else if (a == Action.RIGHT_CLICK_BLOCK) {
                 if (Settings.ORES.contains(e.getClickedBlock().getType()) || e.getClickedBlock().getType() == Settings.PLACEHOLDER_BLOCK) {
-                    Ores cache = EternalOre.getCache(id);
+                    Ore cache = EternalOre.getCache(id);
                     
                     ConfigManager cfg = EternalOre.getOres();
                     cfg.set("ores." + cache.getId(), null);

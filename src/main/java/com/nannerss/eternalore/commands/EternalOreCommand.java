@@ -2,7 +2,6 @@ package com.nannerss.eternalore.commands;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -17,7 +16,7 @@ import com.nannerss.bananalib.messages.Messages;
 import com.nannerss.bananalib.particles.Particles;
 import com.nannerss.bananalib.utils.Utils;
 import com.nannerss.eternalore.EternalOre;
-import com.nannerss.eternalore.data.Ores;
+import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
 import com.nannerss.eternalore.items.WandItem;
 
@@ -83,7 +82,7 @@ public class EternalOreCommand extends Command {
             if (args.length < 2) {
                 Block block = p.getTargetBlock(null, 5);
                 
-                for (Ores cache : EternalOre.getOresCache().asMap().values()) {
+                for (Ore cache : EternalOre.getOresCache().asMap().values()) {
                     if (block.getLocation().getWorld() == cache.getLocation().getWorld() && block.getLocation().getBlockX() == cache.getLocation().getBlockX() && block.getLocation().getBlockY() == cache.getLocation().getBlockY() && block.getLocation().getBlockZ() == cache.getLocation().getBlockZ()) {
                         if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK || !Settings.ORES.contains(cache.getLocation().getBlock().getType())) {
                             switch (cache.getType()) {
@@ -150,7 +149,7 @@ public class EternalOreCommand extends Command {
                 String respawnParameter = args[1];
                 
                 if ("all".equalsIgnoreCase(respawnParameter)) {
-                    for (Ores cache : EternalOre.getOresCache().asMap().values()) {
+                    for (Ore cache : EternalOre.getOresCache().asMap().values()) {
                         if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK || !Settings.ORES.contains(cache.getLocation().getBlock().getType())) {
                             switch (cache.getType()) {
                                 case "STONE":

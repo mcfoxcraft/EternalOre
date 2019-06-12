@@ -12,7 +12,7 @@ import com.nannerss.bananalib.utils.Registrar;
 import com.nannerss.eternalore.commands.EternalOreCommand;
 import com.nannerss.eternalore.listeners.JoinListener;
 import com.nannerss.eternalore.utils.Metrics;
-import com.nannerss.eternalore.data.Ores;
+import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
 import com.nannerss.eternalore.listeners.OreMineListener;
 import com.nannerss.eternalore.listeners.WandListener;
@@ -33,7 +33,7 @@ public class EternalOre extends JavaPlugin {
     private static ConfigManager ores;
     
     @Getter
-    private static final Cache<String, Ores> oresCache = CacheBuilder.newBuilder().maximumSize(10000).build();
+    private static final Cache<String, Ore> oresCache = CacheBuilder.newBuilder().maximumSize(10000).build();
     
     @Override
     public void onEnable() {
@@ -77,7 +77,7 @@ public class EternalOre extends JavaPlugin {
     public void onDisable() {
         instance = null;
         
-        for (final Ores cache : oresCache.asMap().values()) {
+        for (final Ore cache : oresCache.asMap().values()) {
             cache.save();
         }
         
@@ -86,11 +86,11 @@ public class EternalOre extends JavaPlugin {
         getServer().getScheduler().cancelTasks(this);
     }
     
-    public static Ores getCache(String id) {
-        Ores cache = oresCache.getIfPresent(id);
+    public static Ore getCache(String id) {
+        Ore cache = oresCache.getIfPresent(id);
         
         if (cache == null) {
-            cache = new Ores(id);
+            cache = new Ore(id);
             
             oresCache.put(id, cache);
         }

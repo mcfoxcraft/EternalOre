@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Ores {
+public class Ore {
     
     private ConfigManager cfg;
     
@@ -20,7 +20,7 @@ public class Ores {
     private Location location;
     private long respawnTime;
     
-    public Ores(String id) {
+    public Ore(String id) {
         this.id = id;
         
         load();

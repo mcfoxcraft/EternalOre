@@ -10,7 +10,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import com.nannerss.bananalib.particles.Particles;
 import com.nannerss.eternalore.EternalOre;
-import com.nannerss.eternalore.data.Ores;
+import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
 
 public class OreRegenTask extends BukkitRunnable {
@@ -19,7 +19,7 @@ public class OreRegenTask extends BukkitRunnable {
     
     @Override
     public void run() {
-        for (Ores cache : EternalOre.getOresCache().asMap().values()) {
+        for (Ore cache : EternalOre.getOresCache().asMap().values()) {
             if (cache.getLocation().getBlock().getType() == Settings.PLACEHOLDER_BLOCK) {
                 if (cache.getRespawnTime() <= System.currentTimeMillis()) {
                     switch (cache.getType()) {

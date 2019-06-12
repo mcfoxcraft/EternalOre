@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import com.nannerss.bananalib.config.ConfigManager;
 import com.nannerss.bananalib.messages.Messages;
 import com.nannerss.eternalore.EternalOre;
-import com.nannerss.eternalore.data.Ores;
+import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
 
 public class OreMineListener implements Listener {
@@ -30,7 +30,7 @@ public class OreMineListener implements Listener {
         if (p.getGameMode() == GameMode.SURVIVAL) {
             ConfigManager cfg = EternalOre.getOres();
             
-            for (Ores cache : EternalOre.getOresCache().asMap().values()) {
+            for (Ore cache : EternalOre.getOresCache().asMap().values()) {
                 if (e.getBlock().getLocation().getWorld() == cache.getLocation().getWorld() && e.getBlock().getLocation().getBlockX() == cache.getLocation().getBlockX() && e.getBlock().getLocation().getBlockY() == cache.getLocation().getBlockY() && e.getBlock().getLocation().getBlockZ() == cache.getLocation().getBlockZ()) {
                     if (e.getBlock().getType() == Settings.PLACEHOLDER_BLOCK) {
                         e.setCancelled(true);
