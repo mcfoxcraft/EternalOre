@@ -55,8 +55,6 @@ public class Ore {
         cfg.set("ores." + id + ".location", locString);
         
         cfg.set("ores." + id + ".respawn-time", respawnTime);
-        
-        cfg.saveConfig();
     }
     
 }

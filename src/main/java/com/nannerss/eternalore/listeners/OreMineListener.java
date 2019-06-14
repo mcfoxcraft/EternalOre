@@ -43,7 +43,7 @@ public class OreMineListener implements Listener {
                         drop = Settings.STONE_DROP;
                     } else if (e.getBlock().getType() == Material.COBBLESTONE) {
                         drop = Settings.COBBLESTONE_DROP;
-                    } else if (e.getBlock().getType() == (Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"))) {
+                    } else if (e.getBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
                         drop = Settings.QUARTZ_DROP;
                     } else if (e.getBlock().getType() == Material.COAL_ORE) {
                         drop = Settings.COAL_DROP;
@@ -68,7 +68,6 @@ public class OreMineListener implements Listener {
                     switch (cache.getType()) {
                         case "STONE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.STONE_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.STONE_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.STONE_DROP)).getAmount() != Settings.STONE_DROP.getMaxStackSize()) {
@@ -102,7 +101,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "COBBLESTONE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.COBBLESTONE_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.COBBLESTONE_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.COBBLESTONE_DROP)).getAmount() != Settings.COBBLESTONE_DROP.getMaxStackSize()) {
@@ -136,7 +134,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "QUARTZ_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.QUARTZ_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.QUARTZ_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.QUARTZ_DROP)).getAmount() != Settings.QUARTZ_DROP.getMaxStackSize()) {
@@ -170,7 +167,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "COAL_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.COAL_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
             
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.COAL_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.COAL_DROP)).getAmount() != Settings.COAL_DROP.getMaxStackSize()) {
@@ -204,7 +200,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "IRON_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.IRON_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
             
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.IRON_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.IRON_DROP)).getAmount() != Settings.IRON_DROP.getMaxStackSize()) {
@@ -238,7 +233,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "GOLD_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.GOLD_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
             
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.GOLD_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.GOLD_DROP)).getAmount() != Settings.GOLD_DROP.getMaxStackSize()) {
@@ -272,7 +266,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "LAPIS_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.LAPIS_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.LAPIS_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.LAPIS_DROP)).getAmount() != Settings.LAPIS_DROP.getMaxStackSize()) {
@@ -282,13 +275,13 @@ public class OreMineListener implements Listener {
                                         p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                     }
                 
-                                    if (Settings.LAPIS_DROP == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                         p.getInventory().addItem(new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1, (short) 4));
                                     } else {
                                         p.getInventory().addItem(new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1));
                                     }
                                 } else {
-                                    if (Settings.LAPIS_DROP == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                         p.getWorld().dropItem(p.getLocation(), new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1, (short) 4));
                                     } else {
                                         p.getWorld().dropItem(p.getLocation(), new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1));
@@ -309,7 +302,7 @@ public class OreMineListener implements Listener {
                                     p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                 }
     
-                                if (Settings.LAPIS_DROP == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                     p.getInventory().addItem(new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1, (short) 4));
                                 } else {
                                     p.getInventory().addItem(new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1));
@@ -318,7 +311,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "REDSTONE_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.REDSTONE_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.REDSTONE_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.REDSTONE_DROP)).getAmount() != Settings.REDSTONE_DROP.getMaxStackSize()) {
@@ -352,7 +344,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "DIAMOND_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.DIAMOND_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.DIAMOND_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.DIAMOND_DROP)).getAmount() != Settings.DIAMOND_DROP.getMaxStackSize()) {
@@ -386,7 +377,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "EMERALD_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.EMERALD_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(Settings.EMERALD_DROP) != -1 && p.getInventory().getItem(p.getInventory().first(Settings.EMERALD_DROP)).getAmount() != Settings.EMERALD_DROP.getMaxStackSize()) {
@@ -420,7 +410,6 @@ public class OreMineListener implements Listener {
                             break;
                         case "RANDOM_ORE":
                             cache.setRespawnTime(System.currentTimeMillis() + Settings.RANDOM_RESPAWN_TIME * 60 * 1000);
-                            cache.save();
         
                             if (p.getInventory().firstEmpty() == -1) {
                                 if (p.getInventory().first(drop) != -1 && p.getInventory().getItem(p.getInventory().first(drop)).getAmount() != drop.getMaxStackSize()) {
@@ -430,13 +419,13 @@ public class OreMineListener implements Listener {
                                         p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                     }
     
-                                    if (drop == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                    if (drop.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                         p.getInventory().addItem(new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1, (short) 4));
                                     } else {
                                         p.getInventory().addItem(new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1));
                                     }
                                 } else {
-                                    if (drop == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                    if (drop.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                         p.getWorld().dropItem(p.getLocation(), new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1, (short) 4));
                                     } else {
                                         p.getWorld().dropItem(p.getLocation(), new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1));
@@ -457,7 +446,7 @@ public class OreMineListener implements Listener {
                                     p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                 }
     
-                                if (drop == Material.valueOf("INK_SACK") && Bukkit.getVersion().contains("1.8")) {
+                                if (drop.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
                                     p.getInventory().addItem(new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1, (short) 4));
                                 } else {
                                     p.getInventory().addItem(new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1));

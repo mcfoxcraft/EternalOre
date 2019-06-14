@@ -11,6 +11,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.material.MaterialData;
 
 import com.nannerss.bananalib.messages.Messages;
 import com.nannerss.bananalib.particles.Particles;
@@ -93,7 +94,7 @@ public class EternalOreCommand extends Command {
                                     cache.getLocation().getBlock().setType(Material.COBBLESTONE);
                                     break;
                                 case "QUARTZ_ORE":
-                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"));
                                     break;
                                 case "COAL_ORE":
                                     cache.getLocation().getBlock().setType(Material.COAL_ORE);
@@ -125,13 +126,17 @@ public class EternalOreCommand extends Command {
                             
                             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                                 if (cache.getLocation().distance(onlinePlayer.getLocation()) <= 100) {
-                                    if (Bukkit.getVersion().contains("1.8")) {
-                                        onlinePlayer.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
+                                    if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
+                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
                                     } else {
-                                        onlinePlayer.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
+                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
                                     }
-                                    
-                                    Particles.spawnParticle(onlinePlayer, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
+    
+                                    if (Bukkit.getVersion().contains("1.8")) {
+                                        p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
+                                    } else {
+                                        p.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
+                                    }
                                 }
                             }
                             
@@ -159,7 +164,7 @@ public class EternalOreCommand extends Command {
                                     cache.getLocation().getBlock().setType(Material.COBBLESTONE);
                                     break;
                                 case "QUARTZ_ORE":
-                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                                    cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"));
                                     break;
                                 case "COAL_ORE":
                                     cache.getLocation().getBlock().setType(Material.COAL_ORE);
@@ -191,13 +196,17 @@ public class EternalOreCommand extends Command {
                             
                             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                                 if (cache.getLocation().distance(onlinePlayer.getLocation()) <= 100) {
-                                    if (Bukkit.getVersion().contains("1.8")) {
-                                        onlinePlayer.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
+                                    if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
+                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
                                     } else {
-                                        onlinePlayer.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
+                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
                                     }
-                                    
-                                    Particles.spawnParticle(onlinePlayer, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
+    
+                                    if (Bukkit.getVersion().contains("1.8")) {
+                                        p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
+                                    } else {
+                                        p.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
+                                    }
                                 }
                             }
                         }

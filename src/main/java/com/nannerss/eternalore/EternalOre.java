@@ -11,6 +11,7 @@ import com.nannerss.bananalib.messages.Console;
 import com.nannerss.bananalib.utils.Registrar;
 import com.nannerss.eternalore.commands.EternalOreCommand;
 import com.nannerss.eternalore.listeners.JoinListener;
+import com.nannerss.eternalore.tasks.DataSaveTask;
 import com.nannerss.eternalore.utils.Metrics;
 import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
@@ -60,6 +61,7 @@ public class EternalOre extends JavaPlugin {
         }
         
         new OreRegenTask().runTaskTimer(this, 200, 20);
+        new DataSaveTask().runTaskTimer(this, 200, 20 * 60);
     
         new Updater(68180) {
         
@@ -80,6 +82,8 @@ public class EternalOre extends JavaPlugin {
         for (final Ore cache : oresCache.asMap().values()) {
             cache.save();
         }
+        
+        ores.saveConfig();
         
         oresCache.invalidateAll();
         

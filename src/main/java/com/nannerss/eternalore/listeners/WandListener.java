@@ -51,7 +51,6 @@ public class WandListener implements Listener {
                         cache.setType("RANDOM_ORE");
                         cache.setLocation(loc);
                         cache.setRespawnTime(0);
-                        cache.save();
     
                         Messages.sendMessage(p, "&dMade " + WordUtils.capitalize(e.getClickedBlock().getType().toString().toLowerCase().replace("_", " ")) + " at " + loc.getBlockX() + ", " + loc.getBlockY() + ", " + loc.getBlockZ() + " a random ore!");
                         
@@ -63,7 +62,7 @@ public class WandListener implements Listener {
                     if (Settings.ORES.contains(e.getClickedBlock().getType())) {
                         Ore cache = EternalOre.getCache(id);
                         
-                        if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"))) {
+                        if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
                             cache.setType("QUARTZ_ORE");
                         } else {
                             cache.setType(e.getClickedBlock().getType().toString());
@@ -71,7 +70,6 @@ public class WandListener implements Listener {
                         
                         cache.setLocation(loc);
                         cache.setRespawnTime(0);
-                        cache.save();
                         
                         Messages.sendMessage(p, "&dMade " + WordUtils.capitalize(e.getClickedBlock().getType().toString().toLowerCase().replace("_", " ")) + " at " + loc.getBlockX() + ", " + loc.getBlockY() + ", " + loc.getBlockZ() + " a respawnable ore!");
                         
@@ -86,7 +84,6 @@ public class WandListener implements Listener {
                     
                     ConfigManager cfg = EternalOre.getOres();
                     cfg.set("ores." + cache.getId(), null);
-                    cfg.saveConfig();
                     
                     EternalOre.getOresCache().invalidate(cache.getId());
                     

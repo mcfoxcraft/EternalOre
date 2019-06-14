@@ -30,7 +30,7 @@ public class OreRegenTask extends BukkitRunnable {
                             cache.getLocation().getBlock().setType(Material.COBBLESTONE);
                             break;
                         case "QUARTZ_ORE":
-                            cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.8") ? Material.valueOf("QUARTZ_ORE") : Material.valueOf("NETHER_QUARTZ_ORE"));
+                            cache.getLocation().getBlock().setType(Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"));
                             break;
                         case "COAL_ORE":
                             cache.getLocation().getBlock().setType(Material.COAL_ORE);
@@ -62,13 +62,17 @@ public class OreRegenTask extends BukkitRunnable {
     
                     for (Player p : Bukkit.getOnlinePlayers()) {
                         if (cache.getLocation().distance(p.getLocation()) <= 100) {
+                            if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
+                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
+                            } else {
+                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
+                            }
+    
                             if (Bukkit.getVersion().contains("1.8")) {
                                 p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
                             } else {
                                 p.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
                             }
-            
-                            Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
                         }
                     }
                 }
@@ -80,13 +84,17 @@ public class OreRegenTask extends BukkitRunnable {
                     
                     for (Player p : Bukkit.getOnlinePlayers()) {
                         if (cache.getLocation().distance(p.getLocation()) <= 50) {
+                            if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
+                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
+                            } else {
+                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
+                            }
+                            
                             if (Bukkit.getVersion().contains("1.8")) {
                                 p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
                             } else {
                                 p.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
                             }
-            
-                            Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
                         }
                     }
                 }
