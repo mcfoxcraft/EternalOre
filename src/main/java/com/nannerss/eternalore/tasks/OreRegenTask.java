@@ -61,6 +61,10 @@ public class OreRegenTask extends BukkitRunnable {
                     }
     
                     for (Player p : Bukkit.getOnlinePlayers()) {
+                        if (!p.getWorld().equals(cache.getLocation().getWorld())) {
+                            continue;
+                        }
+                        
                         if (cache.getLocation().distance(p.getLocation()) <= 100) {
                             if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
                                 Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
@@ -83,6 +87,10 @@ public class OreRegenTask extends BukkitRunnable {
                     cache.getLocation().getBlock().setType(ore);
                     
                     for (Player p : Bukkit.getOnlinePlayers()) {
+                        if (!p.getWorld().equals(cache.getLocation().getWorld())) {
+                            continue;
+                        }
+                        
                         if (cache.getLocation().distance(p.getLocation()) <= 50) {
                             if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14")) {
                                 Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
