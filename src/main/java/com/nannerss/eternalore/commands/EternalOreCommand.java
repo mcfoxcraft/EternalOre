@@ -11,7 +11,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.material.MaterialData;
 
 import com.nannerss.bananalib.messages.Messages;
 import com.nannerss.bananalib.particles.Particles;
@@ -58,22 +57,10 @@ public class EternalOreCommand extends Command {
                     "     &5&lShowing help for EternalOre...",
                     "",
                     "&d/eternalore &5help &8- &7Displays this help page.",
-                    "&d/eternalore &5reload &8- &7Reloads the settings config.",
                     "&d/eternalore &5respawn [all] &8- &7Respawns all ores ore just the one you're looking at.",
+                    "&d/eternalore &5reload &8- &7Reloads the settings config.",
                     "&d/eternalore &5wand &8- &7Gives you the Eternal Ore Wand.",
                     "");
-        } else if ("reload".equalsIgnoreCase(parameter)) {
-            if (!p.hasPermission("eternalore.reload")) {
-                Messages.sendMessage(p, "&cInsufficient permissions!");
-                return false;
-            }
-            
-            EternalOre.getSettings().loadConfig();
-            Settings.load();
-            
-            WandItem.getItem().setType(Settings.WAND_MATERIAL);
-            
-            Messages.sendMessage(p, "&dSuccessfully reloaded the config!");
         } else if ("respawn".equalsIgnoreCase(parameter)) {
             if (!p.hasPermission("eternalore.respawn")) {
                 Messages.sendMessage(p, "&cInsufficient permissions!");
@@ -218,6 +205,18 @@ public class EternalOreCommand extends Command {
                 
                 Messages.sendMessage(p, "&cUsage: /eternalore respawn [all]");
             }
+        } else if ("reload".equalsIgnoreCase(parameter)) {
+            if (!p.hasPermission("eternalore.reload")) {
+                Messages.sendMessage(p, "&cInsufficient permissions!");
+                return false;
+            }
+    
+            EternalOre.getSettings().loadConfig();
+            Settings.load();
+    
+            WandItem.getItem().setType(Settings.WAND_MATERIAL);
+    
+            Messages.sendMessage(p, "&dSuccessfully reloaded the config!");
         } else if ("wand".equalsIgnoreCase(parameter)) {
             if (!p.hasPermission("eternalore.wand.give")) {
                 Messages.sendMessage(p, "&cInsufficient permissions!");

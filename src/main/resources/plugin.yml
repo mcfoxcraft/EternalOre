@@ -11,19 +11,19 @@ permissions:
     default: false
     children:
       eternalore.help: true
-      eternalore.reload: true
       eternalore.respawn: true
+      eternalore.reload: true
       eternalore.wand.give: true
       eternalore.wand.use: true
       eternalore.update: true
   eternalore.help:
     description: Allows the player to view the help for this plugin.
     default: false
-  eternalore.reload:
-    description: Allows the player to reload the settings.yml
-    default: false
   eternalore.respawn:
     description: Allows the player to respawn mined ores.
+    default: false
+  eternalore.reload:
+    description: Allows the player to reload the settings.yml
     default: false
   eternalore.wand.give:
     description: Allows the player to give themself the Eternal Ore Wand.
