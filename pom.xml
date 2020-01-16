@@ -1,0 +1,75 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.nannerrs</groupId>
+    <artifactId>EGSOres</artifactId>
+    <version>1.2.1</version>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>papermc</id>
+            <url>https://papermc.io/repo/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.nannerss</groupId>
+            <artifactId>bananalib</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.destroystokyo.paper</groupId>
+            <artifactId>paper-api</artifactId>
+            <version>1.15.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>EGSOres</finalName>
+        <plugins>
+            <!-- Maven Shade Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <!-- Run shade goal on package phase -->
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <artifactSet>
+                                <includes>
+                                    <include>com.nannerss:bananalib</include>
+                                </includes>
+                            </artifactSet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,9 +1,9 @@
-name: ${project.artifactId}
-main: ${mainClass}
-version: ${project.version}
-author: ${author}
+name: EGSOres
+main: com.nannerss.eternalore.EternalOre
+version: 1.2.1
+authors: [Nannerss, TheMelvinNL]
 
-api-version: 1.13
+api-version: 1.15
 
 permissions:
   eternalore.*:

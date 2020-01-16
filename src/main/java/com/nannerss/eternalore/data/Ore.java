@@ -3,7 +3,7 @@ package com.nannerss.eternalore.data;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
-import com.nannerss.bananalib.config.ConfigManager;
+import com.nannerss.eternalore.lib.config.ConfigManager;
 import com.nannerss.eternalore.EternalOre;
 
 import lombok.Getter;

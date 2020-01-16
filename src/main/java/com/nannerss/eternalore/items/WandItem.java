@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.nannerss.bananalib.utils.Utils;
+import com.nannerss.eternalore.lib.utils.Utils;
 import com.nannerss.eternalore.data.Settings;
 
 import lombok.Getter;

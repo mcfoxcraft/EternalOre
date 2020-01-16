@@ -8,8 +8,8 @@ import java.net.URLConnection;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-import com.nannerss.bananalib.messages.Component;
-import com.nannerss.bananalib.utils.Utils;
+import com.nannerss.eternalore.lib.messages.Component;
+import com.nannerss.eternalore.lib.utils.Utils;
 import com.nannerss.eternalore.EternalOre;
 
 import net.md_5.bungee.api.chat.BaseComponent;

@@ -2,7 +2,7 @@ package com.nannerss.eternalore.tasks;
 
 import org.bukkit.scheduler.BukkitRunnable;
 
-import com.nannerss.bananalib.config.ConfigManager;
+import com.nannerss.eternalore.lib.config.ConfigManager;
 import com.nannerss.eternalore.EternalOre;
 import com.nannerss.eternalore.data.Ore;
 

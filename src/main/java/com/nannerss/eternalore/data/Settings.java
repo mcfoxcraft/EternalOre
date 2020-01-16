@@ -8,7 +8,7 @@ import java.util.Objects;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 
-import com.nannerss.bananalib.config.ConfigManager;
+import com.nannerss.eternalore.lib.config.ConfigManager;
 import com.nannerss.eternalore.EternalOre;
 
 public class Settings {
@@ -17,7 +17,7 @@ public class Settings {
     
     public static Material WAND_MATERIAL;
     public static Material PLACEHOLDER_BLOCK;
-    public static List<Material> ORES = Arrays.asList(Material.STONE, Material.COBBLESTONE, Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"), Material.COAL_ORE, Material.IRON_ORE, Material.GOLD_ORE, Material.LAPIS_ORE, Material.REDSTONE_ORE, Material.DIAMOND_ORE, Material.EMERALD_ORE);
+    public static List<Material> ORES = Arrays.asList(Material.STONE, Material.COBBLESTONE, Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"), Material.COAL_ORE, Material.IRON_ORE, Material.GOLD_ORE, Material.LAPIS_ORE, Material.REDSTONE_ORE, Material.DIAMOND_ORE, Material.EMERALD_ORE);
     
     public static Material STONE_DROP;
     public static int STONE_MAX_DROP_COUNT;
@@ -97,7 +97,7 @@ public class Settings {
         
         String LAPIS_DROP_NAME = cfg.getString("ores.lapis-ore.drop");
         if ("LAPIS_LAZULI".equals(LAPIS_DROP_NAME.toUpperCase())) {
-            if (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14")) {
+            if (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15")) {
                 LAPIS_DROP = Material.valueOf("LAPIS_LAZULI");
             } else {
                 LAPIS_DROP = Material.valueOf("INK_SACK");
@@ -151,7 +151,7 @@ public class Settings {
                 final Material mat;
     
                 if ("NETHER_QUARTZ_ORE".equals(fixedName) || "QUARTZ_ORE".equals(fixedName)) {
-                    if (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14")) {
+                    if (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15")) {
                         mat = Material.valueOf("NETHER_QUARTZ_ORE");
                     } else {
                         mat = Material.valueOf("QUARTZ_ORE");

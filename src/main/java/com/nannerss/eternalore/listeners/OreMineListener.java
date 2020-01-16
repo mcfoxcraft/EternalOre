@@ -15,9 +15,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-import com.nannerss.bananalib.config.ConfigManager;
-import com.nannerss.bananalib.messages.Console;
-import com.nannerss.bananalib.messages.Messages;
+import com.nannerss.eternalore.lib.config.ConfigManager;
+import com.nannerss.eternalore.lib.messages.Console;
+import com.nannerss.eternalore.lib.messages.Messages;
 import com.nannerss.eternalore.EternalOre;
 import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
@@ -46,7 +46,7 @@ public class OreMineListener implements Listener {
                         drop = Settings.STONE_DROP;
                     } else if (e.getBlock().getType() == Material.COBBLESTONE) {
                         drop = Settings.COBBLESTONE_DROP;
-                    } else if (e.getBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
+                    } else if (e.getBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
                         drop = Settings.QUARTZ_DROP;
                     } else if (e.getBlock().getType() == Material.COAL_ORE) {
                         drop = Settings.COAL_DROP;
@@ -348,13 +348,13 @@ public class OreMineListener implements Listener {
                                         p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                     }
                 
-                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
+                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15"))) {
                                         p.getInventory().addItem(new ItemStack(lapisDrop.getType(), lapisDrop.getAmount(), (short) 4));
                                     } else {
                                         p.getInventory().addItem(lapisDrop);
                                     }
                                 } else {
-                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
+                                    if (Settings.LAPIS_DROP.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15"))) {
                                         p.getWorld().dropItem(p.getLocation(), new ItemStack(lapisDrop.getType(), lapisDrop.getAmount(), (short) 4));
                                     } else {
                                         p.getWorld().dropItem(p.getLocation(), lapisDrop);
@@ -559,7 +559,7 @@ public class OreMineListener implements Listener {
                                     p.playSound(p.getLocation(), Sound.valueOf("ENTITY_EXPERIENCE_ORB_PICKUP"), 1F, 1F);
                                 }
     
-                                if (drop.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14"))) {
+                                if (drop.toString().contains("INK") && (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15"))) {
                                     p.getInventory().addItem(new ItemStack(randomDrop.getType(), randomDrop.getAmount(), (short) 4));
                                 } else {
                                     p.getInventory().addItem(randomDrop);

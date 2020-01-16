@@ -12,8 +12,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.nannerss.bananalib.config.ConfigManager;
-import com.nannerss.bananalib.messages.Messages;
+import com.nannerss.eternalore.lib.config.ConfigManager;
+import com.nannerss.eternalore.lib.messages.Messages;
 import com.nannerss.eternalore.EternalOre;
 import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
@@ -62,7 +62,7 @@ public class WandListener implements Listener {
                     if (Settings.ORES.contains(e.getClickedBlock().getType())) {
                         Ore cache = EternalOre.getCache(id);
                         
-                        if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
+                        if (e.getClickedBlock().getType() == (Bukkit.getVersion().contains("1.13") || Bukkit.getVersion().contains("1.14") || Bukkit.getVersion().contains("1.15") ? Material.valueOf("NETHER_QUARTZ_ORE") : Material.valueOf("QUARTZ_ORE"))) {
                             cache.setType("QUARTZ_ORE");
                         } else {
                             cache.setType(e.getClickedBlock().getType().toString());

@@ -1,14 +1,14 @@
 package com.nannerss.eternalore;
 
+import com.nannerss.eternalore.lib.BananaLib;
+import com.nannerss.eternalore.lib.config.ConfigManager;
+import com.nannerss.eternalore.lib.messages.Console;
+import com.nannerss.eternalore.lib.utils.Registrar;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
-import com.nannerss.bananalib.BananaLib;
-import com.nannerss.bananalib.config.ConfigManager;
-import com.nannerss.bananalib.messages.Console;
-import com.nannerss.bananalib.utils.Registrar;
 import com.nannerss.eternalore.commands.EternalOreCommand;
 import com.nannerss.eternalore.listeners.JoinListener;
 import com.nannerss.eternalore.tasks.DataSaveTask;
