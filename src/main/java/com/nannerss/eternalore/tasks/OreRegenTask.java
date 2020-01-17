@@ -68,42 +68,7 @@ public class OreRegenTask extends BukkitRunnable {
                         }
                         
                         if (cache.getLocation().distance(p.getLocation()) <= 100) {
-//                            if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15")) {
-//                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
-//                            } else {
-//                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
-//                            }
                             p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().clone().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
-                            if (Bukkit.getVersion().contains("1.8")) {
-                                p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
-                            } else {
-                                p.playSound(cache.getLocation(), Sound.valueOf("BLOCK_STONE_BREAK"), 1F, 1F);
-                            }
-                        }
-                    }
-                }
-            } else if (Settings.ORES.contains(cache.getLocation().getBlock().getType()) || cache.getLocation().getBlock().getType() == Material.REDSTONE_BLOCK) {
-                if (cache.getType().equals("RANDOM_ORE")) {
-                    Material ore = Settings.RANDOM_ORES.get(r.nextInt(Settings.RANDOM_ORES.size()));
-    
-                    cache.getLocation().getBlock().setType(ore);
-                    
-                    for (Player p : Bukkit.getOnlinePlayers()) {
-                        if (!p.getWorld().equals(cache.getLocation().getWorld())) {
-                            continue;
-                        }
-                        
-                        if (cache.getLocation().distance(p.getLocation()) <= 50) {
-//                            if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15")) {
-//                                p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().getData());
-////                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
-//                            } else {
-//                                p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().getData());
-////                                Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
-//                            }
-//
-                            p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().clone().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
-
                             if (Bukkit.getVersion().contains("1.8")) {
                                 p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
                             } else {
