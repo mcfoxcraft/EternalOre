@@ -119,7 +119,7 @@ public class EternalOreCommand extends Command {
 //                                    } else {
 //                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
 //                                    }
-                                    p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
+                                    p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().clone().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
                                     if (Bukkit.getVersion().contains("1.8")) {
                                         p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
                                     } else {
@@ -189,7 +189,7 @@ public class EternalOreCommand extends Command {
 //                                    } else {
 //                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getBlockData());
 //                                    }
-                                    p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
+                                    p.spawnParticle(Particle.BLOCK_CRACK, cache.getLocation().clone().add(0.5, 0.5, 0.5), 100, cache.getLocation().getBlock().getType().createBlockData());
                                     if (Bukkit.getVersion().contains("1.8")) {
                                         p.playSound(cache.getLocation(), Sound.valueOf("DIG_STONE"), 1F, 1F);
                                     } else {

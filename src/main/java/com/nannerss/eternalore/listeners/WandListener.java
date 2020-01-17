@@ -50,7 +50,7 @@ public class WandListener implements Listener {
     
                         cache.setType("RANDOM_ORE");
                         cache.setLocation(loc);
-                        cache.setRespawnTime(0);
+                        cache.setRespawnTime(1);
     
                         Messages.sendMessage(p, "&dMade " + WordUtils.capitalize(e.getClickedBlock().getType().toString().toLowerCase().replace("_", " ")) + " at " + loc.getBlockX() + ", " + loc.getBlockY() + ", " + loc.getBlockZ() + " a random ore!");
                         
