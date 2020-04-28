@@ -21,6 +21,8 @@ import com.nannerss.eternalore.lib.messages.Messages;
 import com.nannerss.eternalore.EternalOre;
 import com.nannerss.eternalore.data.Ore;
 import com.nannerss.eternalore.data.Settings;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class OreMineListener implements Listener {
     
@@ -567,7 +569,13 @@ public class OreMineListener implements Listener {
                             }
                             break;
                     }
-    
+
+                    ItemStack itemInHand = p.getItemInHand();
+
+                    if (!itemInHand.getType().equals(Material.AIR)) {
+                            itemInHand.setDurability((short) (itemInHand.getDurability() + 1));
+                    }
+
                     e.setCancelled(true);
                 }
             }
