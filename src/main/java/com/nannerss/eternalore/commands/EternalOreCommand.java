@@ -113,6 +113,10 @@ public class EternalOreCommand extends Command {
                             }
                             
                             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                                if (!cache.getLocation().getWorld().equals(onlinePlayer.getLocation().getWorld())) {
+                                    continue;
+                                }
+
                                 if (cache.getLocation().distance(onlinePlayer.getLocation()) <= 100) {
 //                                    if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15")) {
 //                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());
@@ -183,6 +187,10 @@ public class EternalOreCommand extends Command {
                             }
                             
                             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                                if (!cache.getLocation().getWorld().equals(onlinePlayer.getLocation().getWorld())) {
+                                    continue;
+                                }
+
                                 if (cache.getLocation().distance(onlinePlayer.getLocation()) <= 100) {
 //                                    if (!Bukkit.getVersion().contains("1.13") && !Bukkit.getVersion().contains("1.14") && !Bukkit.getVersion().contains("1.15")) {
 //                                        Particles.spawnParticle(p, "BLOCK_CRACK", cache.getLocation().getBlockX() + 0.5F, cache.getLocation().getBlockY() + 0.5F, cache.getLocation().getBlockZ() + 0.5F, 0.25F, 0.25F, 0.25F, 0, 100, cache.getLocation().getBlock().getType().getId());

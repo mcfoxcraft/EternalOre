@@ -11,7 +11,7 @@ import org.bukkit.Material;
 import com.nannerss.eternalore.lib.config.ConfigManager;
 import com.nannerss.eternalore.EternalOre;
 
-public class Settings {
+public class  Settings {
     
     private static ConfigManager cfg;
     
