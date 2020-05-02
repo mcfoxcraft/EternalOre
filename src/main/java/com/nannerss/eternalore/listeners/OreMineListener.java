@@ -1,6 +1,7 @@
 package com.nannerss.eternalore.listeners;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
@@ -72,7 +73,7 @@ public class OreMineListener implements Listener {
     
                     switch (cache.getType()) {
                         case "STONE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.STONE_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.STONE_RESPAWN_TIME));
                             
                             final ItemStack stoneDrop = new ItemStack(Settings.STONE_DROP, r.nextInt(Settings.STONE_MAX_DROP_COUNT) + 1);
                             
@@ -115,7 +116,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "COBBLESTONE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.COBBLESTONE_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.COBBLESTONE_RESPAWN_TIME));
     
                             final ItemStack cobbleDrop = new ItemStack(Settings.COBBLESTONE_DROP, r.nextInt(Settings.COBBLESTONE_MAX_DROP_COUNT) + 1);
     
@@ -158,7 +159,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "QUARTZ_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.QUARTZ_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.QUARTZ_RESPAWN_TIME));
     
                             final ItemStack quartzDrop = new ItemStack(Settings.QUARTZ_DROP, r.nextInt(Settings.QUARTZ_MAX_DROP_COUNT) + 1);
     
@@ -201,7 +202,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "COAL_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.COAL_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.COAL_RESPAWN_TIME));
     
                             final ItemStack coalDrop = new ItemStack(Settings.COAL_DROP, r.nextInt(Settings.COAL_MAX_DROP_COUNT) + 1);
     
@@ -244,7 +245,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "IRON_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.IRON_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.IRON_RESPAWN_TIME));
     
                             final ItemStack ironDrop = new ItemStack(Settings.IRON_DROP, r.nextInt(Settings.IRON_MAX_DROP_COUNT) + 1);
     
@@ -287,7 +288,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "GOLD_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.GOLD_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.GOLD_RESPAWN_TIME));
     
                             final ItemStack goldDrop = new ItemStack(Settings.GOLD_DROP, r.nextInt(Settings.GOLD_MAX_DROP_COUNT) + 1);
     
@@ -330,7 +331,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "LAPIS_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.LAPIS_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.LAPIS_RESPAWN_TIME));
     
                             final ItemStack lapisDrop = new ItemStack(Settings.LAPIS_DROP, r.nextInt(Settings.LAPIS_MAX_DROP_COUNT) + 1);
     
@@ -385,7 +386,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "REDSTONE_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.REDSTONE_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.REDSTONE_RESPAWN_TIME));
     
                             final ItemStack redstoneDrop = new ItemStack(Settings.REDSTONE_DROP, r.nextInt(Settings.REDSTONE_MAX_DROP_COUNT) + 1);
     
@@ -428,7 +429,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "DIAMOND_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.DIAMOND_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.DIAMOND_RESPAWN_TIME));
     
                             final ItemStack diamondDrop = new ItemStack(Settings.DIAMOND_DROP, r.nextInt(Settings.DIAMOND_MAX_DROP_COUNT) + 1);
     
@@ -471,7 +472,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "EMERALD_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.EMERALD_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.EMERALD_RESPAWN_TIME));
     
                             final ItemStack emeraldDrop = new ItemStack(Settings.EMERALD_DROP, r.nextInt(Settings.EMERALD_MAX_DROP_COUNT) + 1);
     
@@ -514,7 +515,7 @@ public class OreMineListener implements Listener {
                             }
                             break;
                         case "RANDOM_ORE":
-                            cache.setRespawnTime(System.currentTimeMillis() + Settings.RANDOM_RESPAWN_TIME * 60 * 1000);
+                            cache.setRespawnTime(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(Settings.RANDOM_RESPAWN_TIME));
     
                             final ItemStack randomDrop = new ItemStack(drop, r.nextInt(Settings.RANDOM_MAX_DROP_COUNT) + 1);
     
