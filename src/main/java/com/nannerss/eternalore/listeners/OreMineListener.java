@@ -102,8 +102,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -145,8 +143,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -188,8 +184,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -231,8 +225,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                    
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -274,8 +266,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                    
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -317,8 +307,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                    
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -368,8 +356,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -415,8 +401,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -458,8 +442,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -501,8 +483,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
@@ -552,8 +532,6 @@ public class OreMineListener implements Listener {
                                     } else {
                                         p.playSound(p.getLocation(), Sound.valueOf("BLOCK_NOTE_BLOCK_BASS"), 1F, 1F);
                                     }
-                
-                                    Messages.sendActionBar(p, "&c&lInventory is full. Dropping items at your feet.");
                                 }
                             } else {
                                 if (Bukkit.getVersion().contains("1.8")) {
