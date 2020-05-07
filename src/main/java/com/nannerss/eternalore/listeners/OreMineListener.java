@@ -552,9 +552,15 @@ public class OreMineListener implements Listener {
                     ItemStack itemInHand = p.getItemInHand();
 
                     if (!itemInHand.getType().equals(Material.AIR)) {
+                            short itemDurability = (short) (itemInHand.getDurability() + 1);
                             itemInHand.setDurability((short) (itemInHand.getDurability() + 1));
+
+                            if (itemInHand.getType().getMaxDurability() <= itemDurability) {
+                                itemInHand.setType(Material.AIR);
+                            }
                     }
 
+                    p.setItemInHand(itemInHand);
                     e.setCancelled(true);
                 }
             }
